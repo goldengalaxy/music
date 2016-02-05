@@ -42,7 +42,8 @@ body{
 		</div>
 		
 		<div id="content">
-		<h1>Hallo</h1>
+		<h1>Künstler</h1>
+		<a href="\kuenstler">${k1}</a>
 		</div>
 	</div>
 </body>

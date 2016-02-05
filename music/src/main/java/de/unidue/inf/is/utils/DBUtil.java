@@ -2,6 +2,8 @@ package de.unidue.inf.is.utils;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Properties;
 
@@ -48,6 +50,31 @@ public final class DBUtil {
     }
 
 
+    
+    public static ResultSet LoadOnQuery(String s){
+    	final String url = "jdbc:db2://localhost:50000/try";
+        final String user="db2inst2";
+        final String password="1987";
+    	Connection con = null;
+		try {
+			con = DriverManager.getConnection(url,user,password);
+		} catch (SQLException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+    	try{
+    		PreparedStatement Stmt=con.prepareStatement(s);
+    		Stmt.executeQuery();
+        	ResultSet rs=Stmt.getResultSet();
+        	while(rs.next())
+        	{ return rs;}
+    	}catch( Exception e ) 
+    	{ e . printStackTrace ( ) ;
+    		 System.out.println(e);
+    		 ;
+    		 }
+    	return null;
+    }
     public static boolean checkDatabaseExistsExternal(String database) {
         // Nur für Demozwecke!
         boolean exists = false;

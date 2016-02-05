@@ -1,6 +1,9 @@
 package de.unidue.inf.is;
 
 import java.io.IOException;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -36,6 +39,23 @@ public final class MusicServlet extends HttpServlet {
         }
 
         request.getRequestDispatcher("music_start.ftl").forward(request, response);
+        
+        ResultSet rs=DBUtil.LoadOnQuery("SELECT name from künstler order by kid desc fetch first 3 rows only");
+   
+        try {
+			while(rs.next()){
+				int i=1;
+				request.setAttribute("k"+i, rs.toString());
+				i++;
+				
+			 
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
     }
-
+    
+    
+     
 }
