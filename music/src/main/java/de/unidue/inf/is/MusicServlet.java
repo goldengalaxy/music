@@ -45,7 +45,7 @@ public final class MusicServlet extends HttpServlet {
         try {
 			while(rs.next()){
 				int i=1;
-				request.setAttribute("k"+i, rs.toString());
+				request.setAttribute("k"+Integer.toString(i), rs.toString());
 				i++;
 				
 			 
