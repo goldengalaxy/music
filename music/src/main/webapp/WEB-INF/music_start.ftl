@@ -37,7 +37,7 @@ body{
 		</div>
 		<div id="site">
 		<p>
-			Die Datenbank "${db2name}" ist doch ${db2exists}
+			Die Datenbank "${db2name}" ist ...doch ${db2exists}
 		</p>
 		</div>
 	</div>
