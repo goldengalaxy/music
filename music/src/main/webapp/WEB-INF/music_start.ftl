@@ -40,6 +40,10 @@ body{
 			Die Datenbank "${db2name}" ist ...doch ${db2exists}
 		</p>
 		</div>
+		
+		<div id="content">
+		<h1>Hallo</h1>
+		</div>
 	</div>
 </body>
 </html>
