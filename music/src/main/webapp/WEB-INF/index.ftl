@@ -12,7 +12,7 @@
     <tr>
         <th>Firstname</th>  <th>Lastname</th>
     </tr>
-    <#list users as user>
+    <#list users as user, horrrrayyyyyyyyyy!>
     <tr>
         <td>${user.firstname}</td> <td>${user.lastname}</td>
     </tr>
